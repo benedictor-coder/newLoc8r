@@ -1,0 +1,37 @@
+extends layout
+include _includes/sharedHTMLfunctions
+block content
+    h1= title
+    p Welcome to #{title}
+    div.row.banner
+        div.col-12
+            h2= pageHeader.title
+                small &nbsp; #{pageHeader.strapline}
+    div.row
+        div.col-12.col-md-8
+            each location in locations
+                h4
+                    a(href="/location-info")= location.name
+                    small.rating &nbsp;
+                        +outputRating(location.rating)
+                    span.badge.badge-pill.badge-default.float-right= location.distance
+                p.address= location.address
+                p.facilities
+                    each facility in location.facilities
+                        | &nbsp;
+                        span.badge.badge-warning= facility
+        div.col-12.col-md-4
+            p.lead= sidebar
+            .card
+                .card-block
+                    h6
+                        |   Things are better with Loc8r for the esteemed user and customer
+                        <br><br>
+                        |   The best things are yet to come
+
+                .card-block
+                    |    Visit us on social media accounts:
+                    <br><br>
+                    a(href="#") | facebook  |
+                    a(href="#") | twitter   |
+                    a(href="#") | instagram |

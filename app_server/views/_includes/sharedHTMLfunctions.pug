@@ -1,0 +1,9 @@
+mixin outputRating(rating)
+    - let i
+    //this first loop out the correct number of solid stars
+    - for ( i = 1; i <= rating; i++)
+      i.fas.fa-star
+    - let j
+    //this second loop outputs any remaining empty stars
+    - for ( j = rating; j <= 4; j++)
+      j.far.fa-star
